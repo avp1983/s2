@@ -80,7 +80,8 @@
           <?php } ?>
         </div>
       </div>
-      <div class="col-sm-5"><?php echo $content_head; ?>
+      <div class="col-sm-5"><?php echo $inscription; ?>
+	  <?php echo $content_head; ?>
       </div>
       <div class="col-sm-3"><!--<?php echo $cart; ?>--></div>
     </div>

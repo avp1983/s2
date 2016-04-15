@@ -145,6 +145,9 @@ class ControllerCommonHeader extends Controller {
 			$data['class'] = 'common-home';
 		}
 		$data['content_head'] =  $this->load->controller('common/content_head');
+		$setting_info = $this->model_extension_module->getModule(31);
+		$data['inscription'] = $this->load->controller('module/html', $setting_info);
+		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/header.tpl', $data);
 		} else {

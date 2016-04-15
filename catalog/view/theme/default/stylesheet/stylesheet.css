@@ -709,3 +709,9 @@ h2.price {
 .input-group .form-control[name^=quantity] {
 	min-width: 50px;
 }
+.contacts {
+	font-size:2em;
+}
+.inscription {
+	width:100%;
+}
