@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost:8081/admin/');
-define('HTTP_CATALOG', 'http://localhost:8081/');
+define('HTTP_SERVER', 'http://santehych.test/admin/');
+define('HTTP_CATALOG', 'http://santehych.test/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost:8081/admin/');
-define('HTTPS_CATALOG', 'http://localhost:8081/');
+define('HTTPS_SERVER', 'http://santehych.test/admin/');
+define('HTTPS_CATALOG', 'http://santehych.test/');
 
 // DIR
 define('DIR_BASE', realpath($_SERVER['DOCUMENT_ROOT']) . '/');
@@ -25,8 +25,8 @@ define('DIR_CATALOG', DIR_BASE . 'catalog/');
 // DB
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'ocartuser996');
-define('DB_PASSWORD', '*ZSp[R]9x9BW');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
 define('DB_DATABASE', 'opencartdb996');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');

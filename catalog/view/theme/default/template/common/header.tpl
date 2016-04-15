@@ -39,6 +39,7 @@
 <?php echo $google_analytics; ?>
 </head>
 <body class="<?php echo $class; ?>">
+<!--
 <nav id="top">
   <div class="container">
     <?php echo $currency; ?>
@@ -66,7 +67,7 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav>-->
 <header>
   <div class="container">
     <div class="row">
@@ -79,12 +80,13 @@
           <?php } ?>
         </div>
       </div>
-      <div class="col-sm-5"><?php echo $search; ?>
+      <div class="col-sm-5"><?php echo $content_head; ?>
       </div>
-      <div class="col-sm-3"><?php echo $cart; ?></div>
+      <div class="col-sm-3"><!--<?php echo $cart; ?>--></div>
     </div>
   </div>
 </header>
+<!--
 <?php if ($categories) { ?>
 <div class="container">
   <nav id="menu" class="navbar">
@@ -117,3 +119,4 @@
   </nav>
 </div>
 <?php } ?>
+-->
