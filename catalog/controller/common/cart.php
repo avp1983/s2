@@ -38,7 +38,8 @@ class ControllerCommonCart extends Controller {
 
 			array_multisort($sort_order, SORT_ASC, $total_data);
 		}
-
+		$data['route'] = (isset($this->request->get['route']))?$this->request->get['route']:'common/home';
+		
 		$data['text_empty'] = $this->language->get('text_empty');
 		$data['text_cart'] = $this->language->get('text_cart');
 		$data['text_checkout'] = $this->language->get('text_checkout');

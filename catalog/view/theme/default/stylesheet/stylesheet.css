@@ -188,6 +188,43 @@ div.required .control-label:before {
 #cart .dropdown-menu li p {
 	margin: 20px 0;
 }
+
+/* line 25, ../sass/partials/_modules.scss */
+.mainMenu a {
+  display: block;
+  text-align: center;
+  color: #8e9bb5;
+  float: left;
+  width: 7em;
+  height:6em;
+  margin-top:1em;
+}
+@media (min-width: 57em) {
+  /* line 25, ../sass/partials/_modules.scss */
+  .mainMenu a {
+    float: none;
+    width: 100%;
+	
+	
+  }
+}
+/* line 36, ../sass/partials/_modules.scss */
+.mainMenu a .circle {
+  height: 3em;
+  width: 3em;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #8e9bb5;
+}
+/* line 44, ../sass/partials/_modules.scss */
+.mainMenu a.active, .mainMenu a:hover {
+  color: #1e376c;
+}
+/* line 46, ../sass/partials/_modules.scss */
+.mainMenu a.active .circle, .mainMenu a:hover .circle {
+  background: #1e376c;
+}
+
 /* menu */
 #menu {
 	background-color: #229ac8;
@@ -495,16 +532,32 @@ footer h5 {
 }
 /* list group */
 .list-group a {
-	border: 1px solid #DDDDDD;
+	border: none;
 	color: #888888;
 	padding: 8px 12px;
 }
 .list-group a.active, .list-group a.active:hover, .list-group a:hover {
 	color: #444444;
-	background: #eeeeee;
-	border: 1px solid #DDDDDD;
+	background: #eeeeee ;
+	/*border: 1px solid #DDDDDD;*/
 	text-shadow: 0 1px 0 #FFF;
 }
+.list-group a.list-group-item-parent, .list-group a.list-group-item-parent-active {
+	padding-left:25px;
+	background:url(/image/catalog/plus.png) 0 50% no-repeat;
+}
+.list-group a.list-group-item-parent-active  {	
+	background:#ECE4E4 url(/image/catalog/menos.png) 0 50% no-repeat;
+}
+.list-group a.list-group-item-parent:hover {
+	background: #eeeeee url(/image/catalog/plus.png) 0 50% no-repeat;
+}
+.list-group a.list-group-item-parent-active:hover {
+	background: #eeeeee url(/image/catalog/menos.png) 0 50% no-repeat;
+}
+
+
+
 /* carousel */
 .carousel-caption {
 	color: #FFFFFF;

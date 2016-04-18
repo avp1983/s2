@@ -1,5 +1,66 @@
-<div id="cart" class="btn-group btn-block">
-  <button type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total"><?php echo $text_items; ?></span></button>
+<div id="cart" class="btn-group btn-block">	
+	<button  style="display:none;"></button>
+<?php
+
+function isActiveInfo($id) {
+	
+	if (isset($_REQUEST['information_id'])&&$_REQUEST['information_id']==$id) return 'active';
+	return '';
+}	
+
+function isActive($route, $eq) {
+	if ($route==$eq) return 'active';	
+	return '';
+}
+?>
+		<!--
+		<button onclick="window.location.href='/index.php?route=checkout/cart';" type="button"  data-loading-text="<?php echo $text_loading; ?>" class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total"><?php echo $text_items; ?></span></button>
+		-->
+	<nav class="mainMenu">
+		<a href="/index.php?route=checkout/cart" class="<?=isActive($route,'checkout/cart')?>">
+			<div class="circle">
+			
+			</div>
+			<div id="cartText">
+				<?php echo $text_items; ?>
+			</div>
+		</a>
+		<a href="/" class="<?=isActive($route,'common/home')?>">
+			<div class="circle">
+				
+			</div>
+			<div class="mmText">
+				Каталог
+			</div>
+		</a>
+		<a href="/index.php?route=information/information&information_id=7" class="<?=isActiveInfo(7)?>">
+			<div class="circle">
+				
+			</div>
+			<div class="mmText">
+				Акции
+			</div>
+		</a>
+		<a href="index.php?route=information/information&information_id=8" class="<?=isActiveInfo(8)?>">
+			<div class="circle">
+			
+			</div>
+			<div class="mmText">
+				Доставка и оплата
+			</div>
+		</a>
+		<a href="index.php?route=information/information&information_id=9" class="<?=isActiveInfo(9)?>">
+			<div class="circle">
+			
+			</div>
+			<div class="mmText">
+				Контакты
+			</div>
+		</a>
+	</nav>
+  
+  
+<!--
   <ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
     <li>
@@ -55,4 +116,5 @@
     </li>
     <?php } ?>
   </ul>
+  -->
 </div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 15 2016 г., 16:38
+-- Время создания: Апр 18 2016 г., 10:30
 -- Версия сервера: 5.6.21
 -- Версия PHP: 5.6.3
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Структура таблицы `oc_address`
 --
 
+DROP TABLE IF EXISTS `oc_address`;
 CREATE TABLE IF NOT EXISTS `oc_address` (
 `address_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -47,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `oc_address` (
 -- Структура таблицы `oc_affiliate`
 --
 
+DROP TABLE IF EXISTS `oc_affiliate`;
 CREATE TABLE IF NOT EXISTS `oc_affiliate` (
 `affiliate_id` int(11) NOT NULL,
   `firstname` varchar(32) NOT NULL,
@@ -87,6 +89,7 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate` (
 -- Структура таблицы `oc_affiliate_activity`
 --
 
+DROP TABLE IF EXISTS `oc_affiliate_activity`;
 CREATE TABLE IF NOT EXISTS `oc_affiliate_activity` (
 `activity_id` int(11) NOT NULL,
   `affiliate_id` int(11) NOT NULL,
@@ -102,6 +105,7 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate_activity` (
 -- Структура таблицы `oc_affiliate_login`
 --
 
+DROP TABLE IF EXISTS `oc_affiliate_login`;
 CREATE TABLE IF NOT EXISTS `oc_affiliate_login` (
 `affiliate_login_id` int(11) NOT NULL,
   `email` varchar(96) NOT NULL,
@@ -117,6 +121,7 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate_login` (
 -- Структура таблицы `oc_affiliate_transaction`
 --
 
+DROP TABLE IF EXISTS `oc_affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `oc_affiliate_transaction` (
 `affiliate_transaction_id` int(11) NOT NULL,
   `affiliate_id` int(11) NOT NULL,
@@ -132,6 +137,7 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate_transaction` (
 -- Структура таблицы `oc_api`
 --
 
+DROP TABLE IF EXISTS `oc_api`;
 CREATE TABLE IF NOT EXISTS `oc_api` (
 `api_id` int(11) NOT NULL,
   `username` varchar(64) NOT NULL,
@@ -156,6 +162,7 @@ INSERT INTO `oc_api` (`api_id`, `username`, `firstname`, `lastname`, `password`,
 -- Структура таблицы `oc_attribute`
 --
 
+DROP TABLE IF EXISTS `oc_attribute`;
 CREATE TABLE IF NOT EXISTS `oc_attribute` (
 `attribute_id` int(11) NOT NULL,
   `attribute_group_id` int(11) NOT NULL,
@@ -185,6 +192,7 @@ INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) 
 -- Структура таблицы `oc_attribute_description`
 --
 
+DROP TABLE IF EXISTS `oc_attribute_description`;
 CREATE TABLE IF NOT EXISTS `oc_attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -225,6 +233,7 @@ INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) V
 -- Структура таблицы `oc_attribute_group`
 --
 
+DROP TABLE IF EXISTS `oc_attribute_group`;
 CREATE TABLE IF NOT EXISTS `oc_attribute_group` (
 `attribute_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL
@@ -246,6 +255,7 @@ INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- Структура таблицы `oc_attribute_group_description`
 --
 
+DROP TABLE IF EXISTS `oc_attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `oc_attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -272,6 +282,7 @@ INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id
 -- Структура таблицы `oc_banner`
 --
 
+DROP TABLE IF EXISTS `oc_banner`;
 CREATE TABLE IF NOT EXISTS `oc_banner` (
 `banner_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -293,6 +304,7 @@ INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
 -- Структура таблицы `oc_banner_image`
 --
 
+DROP TABLE IF EXISTS `oc_banner_image`;
 CREATE TABLE IF NOT EXISTS `oc_banner_image` (
 `banner_image_id` int(11) NOT NULL,
   `banner_id` int(11) NOT NULL,
@@ -327,6 +339,7 @@ INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`, 
 -- Структура таблицы `oc_banner_image_description`
 --
 
+DROP TABLE IF EXISTS `oc_banner_image_description`;
 CREATE TABLE IF NOT EXISTS `oc_banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -374,6 +387,7 @@ INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `ba
 -- Структура таблицы `oc_category`
 --
 
+DROP TABLE IF EXISTS `oc_category`;
 CREATE TABLE IF NOT EXISTS `oc_category` (
 `category_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
@@ -436,6 +450,7 @@ INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 -- Структура таблицы `oc_category_description`
 --
 
+DROP TABLE IF EXISTS `oc_category_description`;
 CREATE TABLE IF NOT EXISTS `oc_category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -534,6 +549,7 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 -- Структура таблицы `oc_category_filter`
 --
 
+DROP TABLE IF EXISTS `oc_category_filter`;
 CREATE TABLE IF NOT EXISTS `oc_category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL
@@ -545,6 +561,7 @@ CREATE TABLE IF NOT EXISTS `oc_category_filter` (
 -- Структура таблицы `oc_category_path`
 --
 
+DROP TABLE IF EXISTS `oc_category_path`;
 CREATE TABLE IF NOT EXISTS `oc_category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
@@ -634,6 +651,7 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 -- Структура таблицы `oc_category_to_layout`
 --
 
+DROP TABLE IF EXISTS `oc_category_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -646,6 +664,7 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
 -- Структура таблицы `oc_category_to_store`
 --
 
+DROP TABLE IF EXISTS `oc_category_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL
@@ -701,6 +720,7 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 -- Структура таблицы `oc_country`
 --
 
+DROP TABLE IF EXISTS `oc_country`;
 CREATE TABLE IF NOT EXISTS `oc_country` (
 `country_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
@@ -976,6 +996,7 @@ INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 -- Структура таблицы `oc_coupon`
 --
 
+DROP TABLE IF EXISTS `oc_coupon`;
 CREATE TABLE IF NOT EXISTS `oc_coupon` (
 `coupon_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
@@ -1008,6 +1029,7 @@ INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logge
 -- Структура таблицы `oc_coupon_category`
 --
 
+DROP TABLE IF EXISTS `oc_coupon_category`;
 CREATE TABLE IF NOT EXISTS `oc_coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
@@ -1019,6 +1041,7 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_category` (
 -- Структура таблицы `oc_coupon_history`
 --
 
+DROP TABLE IF EXISTS `oc_coupon_history`;
 CREATE TABLE IF NOT EXISTS `oc_coupon_history` (
 `coupon_history_id` int(11) NOT NULL,
   `coupon_id` int(11) NOT NULL,
@@ -1034,6 +1057,7 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_history` (
 -- Структура таблицы `oc_coupon_product`
 --
 
+DROP TABLE IF EXISTS `oc_coupon_product`;
 CREATE TABLE IF NOT EXISTS `oc_coupon_product` (
 `coupon_product_id` int(11) NOT NULL,
   `coupon_id` int(11) NOT NULL,
@@ -1046,6 +1070,7 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_product` (
 -- Структура таблицы `oc_currency`
 --
 
+DROP TABLE IF EXISTS `oc_currency`;
 CREATE TABLE IF NOT EXISTS `oc_currency` (
 `currency_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
@@ -1063,7 +1088,7 @@ CREATE TABLE IF NOT EXISTS `oc_currency` (
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(4, 'рубль', 'RUB', '', ' руб.', '2', 1.00000000, 1, '2016-04-15 14:01:32');
+(4, 'рубль', 'RUB', '', ' руб.', '2', 1.00000000, 1, '2016-04-18 09:53:52');
 
 -- --------------------------------------------------------
 
@@ -1071,6 +1096,7 @@ INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbo
 -- Структура таблицы `oc_customer`
 --
 
+DROP TABLE IF EXISTS `oc_customer`;
 CREATE TABLE IF NOT EXISTS `oc_customer` (
 `customer_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -1101,6 +1127,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer` (
 -- Структура таблицы `oc_customer_activity`
 --
 
+DROP TABLE IF EXISTS `oc_customer_activity`;
 CREATE TABLE IF NOT EXISTS `oc_customer_activity` (
 `activity_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1116,6 +1143,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_activity` (
 -- Структура таблицы `oc_customer_ban_ip`
 --
 
+DROP TABLE IF EXISTS `oc_customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `oc_customer_ban_ip` (
 `customer_ban_ip_id` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL
@@ -1127,6 +1155,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ban_ip` (
 -- Структура таблицы `oc_customer_group`
 --
 
+DROP TABLE IF EXISTS `oc_customer_group`;
 CREATE TABLE IF NOT EXISTS `oc_customer_group` (
 `customer_group_id` int(11) NOT NULL,
   `approval` int(1) NOT NULL,
@@ -1146,6 +1175,7 @@ INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `sort_order`) 
 -- Структура таблицы `oc_customer_group_description`
 --
 
+DROP TABLE IF EXISTS `oc_customer_group_description`;
 CREATE TABLE IF NOT EXISTS `oc_customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1167,6 +1197,7 @@ INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`,
 -- Структура таблицы `oc_customer_history`
 --
 
+DROP TABLE IF EXISTS `oc_customer_history`;
 CREATE TABLE IF NOT EXISTS `oc_customer_history` (
 `customer_history_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1180,6 +1211,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_history` (
 -- Структура таблицы `oc_customer_ip`
 --
 
+DROP TABLE IF EXISTS `oc_customer_ip`;
 CREATE TABLE IF NOT EXISTS `oc_customer_ip` (
 `customer_ip_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1193,6 +1225,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ip` (
 -- Структура таблицы `oc_customer_login`
 --
 
+DROP TABLE IF EXISTS `oc_customer_login`;
 CREATE TABLE IF NOT EXISTS `oc_customer_login` (
 `customer_login_id` int(11) NOT NULL,
   `email` varchar(96) NOT NULL,
@@ -1208,6 +1241,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_login` (
 -- Структура таблицы `oc_customer_online`
 --
 
+DROP TABLE IF EXISTS `oc_customer_online`;
 CREATE TABLE IF NOT EXISTS `oc_customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1222,6 +1256,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_online` (
 -- Структура таблицы `oc_customer_reward`
 --
 
+DROP TABLE IF EXISTS `oc_customer_reward`;
 CREATE TABLE IF NOT EXISTS `oc_customer_reward` (
 `customer_reward_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -1237,6 +1272,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_reward` (
 -- Структура таблицы `oc_customer_transaction`
 --
 
+DROP TABLE IF EXISTS `oc_customer_transaction`;
 CREATE TABLE IF NOT EXISTS `oc_customer_transaction` (
 `customer_transaction_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1252,6 +1288,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer_transaction` (
 -- Структура таблицы `oc_custom_field`
 --
 
+DROP TABLE IF EXISTS `oc_custom_field`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field` (
 `custom_field_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
@@ -1267,6 +1304,7 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field` (
 -- Структура таблицы `oc_custom_field_customer_group`
 --
 
+DROP TABLE IF EXISTS `oc_custom_field_customer_group`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -1279,6 +1317,7 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_customer_group` (
 -- Структура таблицы `oc_custom_field_description`
 --
 
+DROP TABLE IF EXISTS `oc_custom_field_description`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1291,6 +1330,7 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_description` (
 -- Структура таблицы `oc_custom_field_value`
 --
 
+DROP TABLE IF EXISTS `oc_custom_field_value`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_value` (
 `custom_field_value_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -1303,6 +1343,7 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value` (
 -- Структура таблицы `oc_custom_field_value_description`
 --
 
+DROP TABLE IF EXISTS `oc_custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1316,6 +1357,7 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value_description` (
 -- Структура таблицы `oc_download`
 --
 
+DROP TABLE IF EXISTS `oc_download`;
 CREATE TABLE IF NOT EXISTS `oc_download` (
 `download_id` int(11) NOT NULL,
   `filename` varchar(128) NOT NULL,
@@ -1329,6 +1371,7 @@ CREATE TABLE IF NOT EXISTS `oc_download` (
 -- Структура таблицы `oc_download_description`
 --
 
+DROP TABLE IF EXISTS `oc_download_description`;
 CREATE TABLE IF NOT EXISTS `oc_download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1341,6 +1384,7 @@ CREATE TABLE IF NOT EXISTS `oc_download_description` (
 -- Структура таблицы `oc_event`
 --
 
+DROP TABLE IF EXISTS `oc_event`;
 CREATE TABLE IF NOT EXISTS `oc_event` (
 `event_id` int(11) NOT NULL,
   `code` varchar(32) NOT NULL,
@@ -1354,6 +1398,7 @@ CREATE TABLE IF NOT EXISTS `oc_event` (
 -- Структура таблицы `oc_extension`
 --
 
+DROP TABLE IF EXISTS `oc_extension`;
 CREATE TABLE IF NOT EXISTS `oc_extension` (
 `extension_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
@@ -1392,6 +1437,7 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 -- Структура таблицы `oc_filter`
 --
 
+DROP TABLE IF EXISTS `oc_filter`;
 CREATE TABLE IF NOT EXISTS `oc_filter` (
 `filter_id` int(11) NOT NULL,
   `filter_group_id` int(11) NOT NULL,
@@ -1404,6 +1450,7 @@ CREATE TABLE IF NOT EXISTS `oc_filter` (
 -- Структура таблицы `oc_filter_description`
 --
 
+DROP TABLE IF EXISTS `oc_filter_description`;
 CREATE TABLE IF NOT EXISTS `oc_filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1417,6 +1464,7 @@ CREATE TABLE IF NOT EXISTS `oc_filter_description` (
 -- Структура таблицы `oc_filter_group`
 --
 
+DROP TABLE IF EXISTS `oc_filter_group`;
 CREATE TABLE IF NOT EXISTS `oc_filter_group` (
 `filter_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL
@@ -1428,6 +1476,7 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group` (
 -- Структура таблицы `oc_filter_group_description`
 --
 
+DROP TABLE IF EXISTS `oc_filter_group_description`;
 CREATE TABLE IF NOT EXISTS `oc_filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1440,6 +1489,7 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group_description` (
 -- Структура таблицы `oc_geo_zone`
 --
 
+DROP TABLE IF EXISTS `oc_geo_zone`;
 CREATE TABLE IF NOT EXISTS `oc_geo_zone` (
 `geo_zone_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -1462,12 +1512,13 @@ INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`
 -- Структура таблицы `oc_information`
 --
 
+DROP TABLE IF EXISTS `oc_information`;
 CREATE TABLE IF NOT EXISTS `oc_information` (
 `information_id` int(11) NOT NULL,
   `bottom` int(1) NOT NULL DEFAULT '0',
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `oc_information`
@@ -1477,7 +1528,10 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 (3, 1, 3, 1),
 (4, 1, 1, 1),
 (5, 1, 4, 1),
-(6, 1, 2, 1);
+(6, 1, 2, 1),
+(7, 0, 0, 1),
+(8, 0, 0, 1),
+(9, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1485,6 +1539,7 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 -- Структура таблицы `oc_information_description`
 --
 
+DROP TABLE IF EXISTS `oc_information_description`;
 CREATE TABLE IF NOT EXISTS `oc_information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1507,7 +1562,13 @@ INSERT INTO `oc_information_description` (`information_id`, `language_id`, `titl
 (4, 2, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', '', '', ''),
 (5, 2, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', '', '', ''),
 (3, 2, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', '', '', ''),
-(6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', '', '', '');
+(6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', '', '', ''),
+(7, 2, 'Акции', '&lt;p&gt;Акции&lt;br&gt;&lt;/p&gt;', 'Акции', '', ''),
+(7, 1, 'Акции', '&lt;p&gt;Акции&lt;br&gt;&lt;/p&gt;', 'Акции', '', ''),
+(8, 2, 'Доставка и оплата', '&lt;p&gt;Доставка и оплата&lt;br&gt;&lt;/p&gt;', 'Доставка и оплата', '', ''),
+(8, 1, 'Доставка и оплата', '&lt;p&gt;Доставка и оплата&lt;br&gt;&lt;/p&gt;', 'Доставка и оплата', '', ''),
+(9, 2, 'Контакты', 'Контакты', 'Контакты', '', ''),
+(9, 1, 'Контакты', '&lt;p&gt;Контакты&lt;br&gt;&lt;/p&gt;', 'Контакты', '', '');
 
 -- --------------------------------------------------------
 
@@ -1515,11 +1576,21 @@ INSERT INTO `oc_information_description` (`information_id`, `language_id`, `titl
 -- Структура таблицы `oc_information_to_layout`
 --
 
+DROP TABLE IF EXISTS `oc_information_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `oc_information_to_layout`
+--
+
+INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
+(7, 0, 0),
+(8, 0, 0),
+(9, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1527,6 +1598,7 @@ CREATE TABLE IF NOT EXISTS `oc_information_to_layout` (
 -- Структура таблицы `oc_information_to_store`
 --
 
+DROP TABLE IF EXISTS `oc_information_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL
@@ -1540,7 +1612,10 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 (3, 0),
 (4, 0),
 (5, 0),
-(6, 0);
+(6, 0),
+(7, 0),
+(8, 0),
+(9, 0);
 
 -- --------------------------------------------------------
 
@@ -1548,6 +1623,7 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 -- Структура таблицы `oc_language`
 --
 
+DROP TABLE IF EXISTS `oc_language`;
 CREATE TABLE IF NOT EXISTS `oc_language` (
 `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -1573,6 +1649,7 @@ INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `di
 -- Структура таблицы `oc_layout`
 --
 
+DROP TABLE IF EXISTS `oc_layout`;
 CREATE TABLE IF NOT EXISTS `oc_layout` (
 `layout_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL
@@ -1603,13 +1680,14 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 -- Структура таблицы `oc_layout_module`
 --
 
+DROP TABLE IF EXISTS `oc_layout_module`;
 CREATE TABLE IF NOT EXISTS `oc_layout_module` (
 `layout_module_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   `code` varchar(64) NOT NULL,
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `oc_layout_module`
@@ -1621,10 +1699,10 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (20, 5, '0', 'column_left', 2),
 (69, 10, 'affiliate', 'column_right', 1),
 (68, 6, 'account', 'column_right', 1),
-(94, 1, 'category', 'column_left', 1),
+(99, 1, 'category', 'column_left', 1),
 (72, 3, 'category', 'column_left', 1),
 (73, 3, 'banner.30', 'column_left', 2),
-(93, 1, 'featured.28', 'content_top', 0);
+(98, 1, 'featured.28', 'content_top', 0);
 
 -- --------------------------------------------------------
 
@@ -1632,12 +1710,13 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 -- Структура таблицы `oc_layout_route`
 --
 
+DROP TABLE IF EXISTS `oc_layout_route`;
 CREATE TABLE IF NOT EXISTS `oc_layout_route` (
 `layout_route_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `oc_layout_route`
@@ -1647,7 +1726,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (38, 6, 0, 'account/%'),
 (17, 10, 0, 'affiliate/%'),
 (44, 3, 0, 'product/category'),
-(61, 1, 0, 'common/home'),
+(63, 1, 0, 'common/home'),
 (20, 2, 0, 'product/product'),
 (24, 11, 0, 'information/information'),
 (23, 7, 0, 'checkout/%'),
@@ -1664,6 +1743,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 -- Структура таблицы `oc_length_class`
 --
 
+DROP TABLE IF EXISTS `oc_length_class`;
 CREATE TABLE IF NOT EXISTS `oc_length_class` (
 `length_class_id` int(11) NOT NULL,
   `value` decimal(15,8) NOT NULL
@@ -1684,6 +1764,7 @@ INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 -- Структура таблицы `oc_length_class_description`
 --
 
+DROP TABLE IF EXISTS `oc_length_class_description`;
 CREATE TABLE IF NOT EXISTS `oc_length_class_description` (
 `length_class_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1709,6 +1790,7 @@ INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `ti
 -- Структура таблицы `oc_location`
 --
 
+DROP TABLE IF EXISTS `oc_location`;
 CREATE TABLE IF NOT EXISTS `oc_location` (
 `location_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -1727,6 +1809,7 @@ CREATE TABLE IF NOT EXISTS `oc_location` (
 -- Структура таблицы `oc_manufacturer`
 --
 
+DROP TABLE IF EXISTS `oc_manufacturer`;
 CREATE TABLE IF NOT EXISTS `oc_manufacturer` (
 `manufacturer_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -1752,6 +1835,7 @@ INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`)
 -- Структура таблицы `oc_manufacturer_to_store`
 --
 
+DROP TABLE IF EXISTS `oc_manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL
@@ -1775,6 +1859,7 @@ INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- Структура таблицы `oc_marketing`
 --
 
+DROP TABLE IF EXISTS `oc_marketing`;
 CREATE TABLE IF NOT EXISTS `oc_marketing` (
 `marketing_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -1790,6 +1875,7 @@ CREATE TABLE IF NOT EXISTS `oc_marketing` (
 -- Структура таблицы `oc_modification`
 --
 
+DROP TABLE IF EXISTS `oc_modification`;
 CREATE TABLE IF NOT EXISTS `oc_modification` (
 `modification_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -1808,6 +1894,7 @@ CREATE TABLE IF NOT EXISTS `oc_modification` (
 -- Структура таблицы `oc_module`
 --
 
+DROP TABLE IF EXISTS `oc_module`;
 CREATE TABLE IF NOT EXISTS `oc_module` (
 `module_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -1832,6 +1919,7 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 -- Структура таблицы `oc_option`
 --
 
+DROP TABLE IF EXISTS `oc_option`;
 CREATE TABLE IF NOT EXISTS `oc_option` (
 `option_id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
@@ -1861,6 +1949,7 @@ INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
 -- Структура таблицы `oc_option_description`
 --
 
+DROP TABLE IF EXISTS `oc_option_description`;
 CREATE TABLE IF NOT EXISTS `oc_option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1901,6 +1990,7 @@ INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
 -- Структура таблицы `oc_option_value`
 --
 
+DROP TABLE IF EXISTS `oc_option_value`;
 CREATE TABLE IF NOT EXISTS `oc_option_value` (
 `option_value_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
@@ -1934,6 +2024,7 @@ INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 -- Структура таблицы `oc_option_value_description`
 --
 
+DROP TABLE IF EXISTS `oc_option_value_description`;
 CREATE TABLE IF NOT EXISTS `oc_option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1981,6 +2072,7 @@ INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `op
 -- Структура таблицы `oc_order`
 --
 
+DROP TABLE IF EXISTS `oc_order`;
 CREATE TABLE IF NOT EXISTS `oc_order` (
 `order_id` int(11) NOT NULL,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -2051,6 +2143,7 @@ CREATE TABLE IF NOT EXISTS `oc_order` (
 -- Структура таблицы `oc_order_custom_field`
 --
 
+DROP TABLE IF EXISTS `oc_order_custom_field`;
 CREATE TABLE IF NOT EXISTS `oc_order_custom_field` (
 `order_custom_field_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2068,6 +2161,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_custom_field` (
 -- Структура таблицы `oc_order_history`
 --
 
+DROP TABLE IF EXISTS `oc_order_history`;
 CREATE TABLE IF NOT EXISTS `oc_order_history` (
 `order_history_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2083,6 +2177,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_history` (
 -- Структура таблицы `oc_order_option`
 --
 
+DROP TABLE IF EXISTS `oc_order_option`;
 CREATE TABLE IF NOT EXISTS `oc_order_option` (
 `order_option_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2100,6 +2195,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_option` (
 -- Структура таблицы `oc_order_product`
 --
 
+DROP TABLE IF EXISTS `oc_order_product`;
 CREATE TABLE IF NOT EXISTS `oc_order_product` (
 `order_product_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2119,6 +2215,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_product` (
 -- Структура таблицы `oc_order_recurring`
 --
 
+DROP TABLE IF EXISTS `oc_order_recurring`;
 CREATE TABLE IF NOT EXISTS `oc_order_recurring` (
 `order_recurring_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2148,6 +2245,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_recurring` (
 -- Структура таблицы `oc_order_recurring_transaction`
 --
 
+DROP TABLE IF EXISTS `oc_order_recurring_transaction`;
 CREATE TABLE IF NOT EXISTS `oc_order_recurring_transaction` (
 `order_recurring_transaction_id` int(11) NOT NULL,
   `order_recurring_id` int(11) NOT NULL,
@@ -2163,6 +2261,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_recurring_transaction` (
 -- Структура таблицы `oc_order_status`
 --
 
+DROP TABLE IF EXISTS `oc_order_status`;
 CREATE TABLE IF NOT EXISTS `oc_order_status` (
 `order_status_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2209,6 +2308,7 @@ INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- Структура таблицы `oc_order_total`
 --
 
+DROP TABLE IF EXISTS `oc_order_total`;
 CREATE TABLE IF NOT EXISTS `oc_order_total` (
 `order_total_id` int(10) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2224,6 +2324,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_total` (
 -- Структура таблицы `oc_order_voucher`
 --
 
+DROP TABLE IF EXISTS `oc_order_voucher`;
 CREATE TABLE IF NOT EXISTS `oc_order_voucher` (
 `order_voucher_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2245,6 +2346,7 @@ CREATE TABLE IF NOT EXISTS `oc_order_voucher` (
 -- Структура таблицы `oc_product`
 --
 
+DROP TABLE IF EXISTS `oc_product`;
 CREATE TABLE IF NOT EXISTS `oc_product` (
 `product_id` int(11) NOT NULL,
   `model` varchar(64) NOT NULL,
@@ -2286,7 +2388,7 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
 (28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
 (29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
-(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
+(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 12, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
 (31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
 (32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2011-09-30 01:07:22'),
 (33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2011-09-30 01:06:29'),
@@ -2295,8 +2397,8 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
 (40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
 (41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 0, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
-(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 2, '2009-02-03 21:07:49', '2011-09-30 01:05:46'),
+(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 4, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
+(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 5, '2009-02-03 21:07:49', '2011-09-30 01:05:46'),
 (44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
 (45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
 (46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:29', '2011-09-30 01:06:39'),
@@ -2310,6 +2412,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 -- Структура таблицы `oc_product_attribute`
 --
 
+DROP TABLE IF EXISTS `oc_product_attribute`;
 CREATE TABLE IF NOT EXISTS `oc_product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -2339,6 +2442,7 @@ INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`,
 -- Структура таблицы `oc_product_description`
 --
 
+DROP TABLE IF EXISTS `oc_product_description`;
 CREATE TABLE IF NOT EXISTS `oc_product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2401,6 +2505,7 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 -- Структура таблицы `oc_product_discount`
 --
 
+DROP TABLE IF EXISTS `oc_product_discount`;
 CREATE TABLE IF NOT EXISTS `oc_product_discount` (
 `product_discount_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -2427,6 +2532,7 @@ INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `custome
 -- Структура таблицы `oc_product_filter`
 --
 
+DROP TABLE IF EXISTS `oc_product_filter`;
 CREATE TABLE IF NOT EXISTS `oc_product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL
@@ -2438,6 +2544,7 @@ CREATE TABLE IF NOT EXISTS `oc_product_filter` (
 -- Структура таблицы `oc_product_image`
 --
 
+DROP TABLE IF EXISTS `oc_product_image`;
 CREATE TABLE IF NOT EXISTS `oc_product_image` (
 `product_image_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -2518,6 +2625,7 @@ INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort
 -- Структура таблицы `oc_product_option`
 --
 
+DROP TABLE IF EXISTS `oc_product_option`;
 CREATE TABLE IF NOT EXISTS `oc_product_option` (
 `product_option_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -2550,6 +2658,7 @@ INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`,
 -- Структура таблицы `oc_product_option_value`
 --
 
+DROP TABLE IF EXISTS `oc_product_option_value`;
 CREATE TABLE IF NOT EXISTS `oc_product_option_value` (
 `product_option_value_id` int(11) NOT NULL,
   `product_option_id` int(11) NOT NULL,
@@ -2594,6 +2703,7 @@ INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_optio
 -- Структура таблицы `oc_product_recurring`
 --
 
+DROP TABLE IF EXISTS `oc_product_recurring`;
 CREATE TABLE IF NOT EXISTS `oc_product_recurring` (
   `product_id` int(11) NOT NULL,
   `recurring_id` int(11) NOT NULL,
@@ -2606,6 +2716,7 @@ CREATE TABLE IF NOT EXISTS `oc_product_recurring` (
 -- Структура таблицы `oc_product_related`
 --
 
+DROP TABLE IF EXISTS `oc_product_related`;
 CREATE TABLE IF NOT EXISTS `oc_product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL
@@ -2627,6 +2738,7 @@ INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
 -- Структура таблицы `oc_product_reward`
 --
 
+DROP TABLE IF EXISTS `oc_product_reward`;
 CREATE TABLE IF NOT EXISTS `oc_product_reward` (
 `product_reward_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL DEFAULT '0',
@@ -2665,6 +2777,7 @@ INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_gr
 -- Структура таблицы `oc_product_special`
 --
 
+DROP TABLE IF EXISTS `oc_product_special`;
 CREATE TABLE IF NOT EXISTS `oc_product_special` (
 `product_special_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -2690,6 +2803,7 @@ INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_
 -- Структура таблицы `oc_product_to_category`
 --
 
+DROP TABLE IF EXISTS `oc_product_to_category`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
@@ -2737,6 +2851,7 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 -- Структура таблицы `oc_product_to_download`
 --
 
+DROP TABLE IF EXISTS `oc_product_to_download`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL
@@ -2748,6 +2863,7 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
 -- Структура таблицы `oc_product_to_layout`
 --
 
+DROP TABLE IF EXISTS `oc_product_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -2760,6 +2876,7 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_layout` (
 -- Структура таблицы `oc_product_to_store`
 --
 
+DROP TABLE IF EXISTS `oc_product_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0'
@@ -2796,6 +2913,7 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 -- Структура таблицы `oc_recurring`
 --
 
+DROP TABLE IF EXISTS `oc_recurring`;
 CREATE TABLE IF NOT EXISTS `oc_recurring` (
 `recurring_id` int(11) NOT NULL,
   `price` decimal(10,4) NOT NULL,
@@ -2817,6 +2935,7 @@ CREATE TABLE IF NOT EXISTS `oc_recurring` (
 -- Структура таблицы `oc_recurring_description`
 --
 
+DROP TABLE IF EXISTS `oc_recurring_description`;
 CREATE TABLE IF NOT EXISTS `oc_recurring_description` (
   `recurring_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2829,6 +2948,7 @@ CREATE TABLE IF NOT EXISTS `oc_recurring_description` (
 -- Структура таблицы `oc_return`
 --
 
+DROP TABLE IF EXISTS `oc_return`;
 CREATE TABLE IF NOT EXISTS `oc_return` (
 `return_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2857,6 +2977,7 @@ CREATE TABLE IF NOT EXISTS `oc_return` (
 -- Структура таблицы `oc_return_action`
 --
 
+DROP TABLE IF EXISTS `oc_return_action`;
 CREATE TABLE IF NOT EXISTS `oc_return_action` (
 `return_action_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2881,6 +3002,7 @@ INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUE
 -- Структура таблицы `oc_return_history`
 --
 
+DROP TABLE IF EXISTS `oc_return_history`;
 CREATE TABLE IF NOT EXISTS `oc_return_history` (
 `return_history_id` int(11) NOT NULL,
   `return_id` int(11) NOT NULL,
@@ -2896,6 +3018,7 @@ CREATE TABLE IF NOT EXISTS `oc_return_history` (
 -- Структура таблицы `oc_return_reason`
 --
 
+DROP TABLE IF EXISTS `oc_return_reason`;
 CREATE TABLE IF NOT EXISTS `oc_return_reason` (
 `return_reason_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2924,6 +3047,7 @@ INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 -- Структура таблицы `oc_return_status`
 --
 
+DROP TABLE IF EXISTS `oc_return_status`;
 CREATE TABLE IF NOT EXISTS `oc_return_status` (
 `return_status_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2948,6 +3072,7 @@ INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUE
 -- Структура таблицы `oc_review`
 --
 
+DROP TABLE IF EXISTS `oc_review`;
 CREATE TABLE IF NOT EXISTS `oc_review` (
 `review_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -2966,6 +3091,7 @@ CREATE TABLE IF NOT EXISTS `oc_review` (
 -- Структура таблицы `oc_setting`
 --
 
+DROP TABLE IF EXISTS `oc_setting`;
 CREATE TABLE IF NOT EXISTS `oc_setting` (
 `setting_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2973,7 +3099,7 @@ CREATE TABLE IF NOT EXISTS `oc_setting` (
   `key` varchar(64) NOT NULL,
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=632 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=748 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `oc_setting`
@@ -3009,126 +3135,126 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (146, 0, 'category', 'category_status', '1', 0),
 (158, 0, 'account', 'account_status', '1', 0),
 (159, 0, 'affiliate', 'affiliate_status', '1', 0),
-(620, 0, 'config', 'config_maintenance', '0', 0),
-(621, 0, 'config', 'config_password', '1', 0),
-(622, 0, 'config', 'config_encryption', '048c9804964b42ae9a3d6394916492d8', 0),
-(623, 0, 'config', 'config_compression', '0', 0),
-(624, 0, 'config', 'config_error_display', '1', 0),
-(629, 0, 'config', 'config_google_captcha_public', '', 0),
-(630, 0, 'config', 'config_google_captcha_secret', '', 0),
-(631, 0, 'config', 'config_google_captcha_status', '0', 0),
-(625, 0, 'config', 'config_error_log', '1', 0),
-(626, 0, 'config', 'config_error_filename', 'error.log', 0),
-(627, 0, 'config', 'config_google_analytics', '', 0),
-(628, 0, 'config', 'config_google_analytics_status', '0', 0),
+(735, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(747, 0, 'config', 'config_google_captcha_status', '0', 0),
+(746, 0, 'config', 'config_google_captcha_secret', '', 0),
+(745, 0, 'config', 'config_google_captcha_public', '', 0),
+(744, 0, 'config', 'config_google_analytics_status', '0', 0),
+(743, 0, 'config', 'config_google_analytics', '', 0),
+(742, 0, 'config', 'config_error_filename', 'error.log', 0),
+(741, 0, 'config', 'config_error_log', '1', 0),
+(740, 0, 'config', 'config_error_display', '1', 0),
+(739, 0, 'config', 'config_compression', '0', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
 (103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 (104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-(616, 0, 'config', 'config_seo_url', '0', 0),
-(617, 0, 'config', 'config_file_max_size', '300000', 0),
-(618, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(619, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(615, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(614, 0, 'config', 'config_shared', '0', 0),
-(613, 0, 'config', 'config_secure', '0', 0),
-(612, 0, 'config', 'config_mail_alert', '', 0),
-(611, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(610, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(609, 0, 'config', 'config_mail_smtp_password', '', 0),
-(607, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(608, 0, 'config', 'config_mail_smtp_username', '', 0),
-(606, 0, 'config', 'config_mail_parameter', '', 0),
-(605, 0, 'config', 'config_mail_protocol', 'mail', 0),
-(604, 0, 'config', 'config_ftp_status', '0', 0),
-(601, 0, 'config', 'config_ftp_username', '', 0),
-(602, 0, 'config', 'config_ftp_password', '', 0),
-(603, 0, 'config', 'config_ftp_root', '', 0),
-(600, 0, 'config', 'config_ftp_port', '21', 0),
-(599, 0, 'config', 'config_ftp_hostname', 'santehych.test', 0),
-(598, 0, 'config', 'config_image_location_height', '50', 0),
-(597, 0, 'config', 'config_image_location_width', '268', 0),
-(595, 0, 'config', 'config_image_cart_width', '47', 0),
-(596, 0, 'config', 'config_image_cart_height', '47', 0),
-(593, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(594, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(592, 0, 'config', 'config_image_compare_height', '90', 0),
-(591, 0, 'config', 'config_image_compare_width', '90', 0),
-(590, 0, 'config', 'config_image_related_height', '80', 0),
-(588, 0, 'config', 'config_image_additional_height', '74', 0),
-(589, 0, 'config', 'config_image_related_width', '80', 0),
-(587, 0, 'config', 'config_image_additional_width', '74', 0),
-(586, 0, 'config', 'config_image_product_height', '228', 0),
-(585, 0, 'config', 'config_image_product_width', '228', 0),
-(584, 0, 'config', 'config_image_popup_height', '500', 0),
-(583, 0, 'config', 'config_image_popup_width', '500', 0),
-(582, 0, 'config', 'config_image_thumb_height', '228', 0),
-(581, 0, 'config', 'config_image_thumb_width', '228', 0),
-(580, 0, 'config', 'config_image_category_height', '80', 0),
-(579, 0, 'config', 'config_image_category_width', '80', 0),
-(578, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(577, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(576, 0, 'config', 'config_return_status_id', '2', 0),
-(575, 0, 'config', 'config_return_id', '0', 0),
-(574, 0, 'config', 'config_affiliate_mail', '0', 0),
-(572, 0, 'config', 'config_affiliate_commission', '5', 0),
-(573, 0, 'config', 'config_affiliate_id', '4', 0),
-(571, 0, 'config', 'config_affiliate_auto', '0', 0),
-(570, 0, 'config', 'config_affiliate_approval', '0', 0),
-(569, 0, 'config', 'config_stock_checkout', '0', 0),
-(568, 0, 'config', 'config_stock_warning', '0', 0),
-(567, 0, 'config', 'config_stock_display', '0', 0),
-(566, 0, 'config', 'config_order_mail', '0', 0),
-(565, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
-(564, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
-(563, 0, 'config', 'config_order_status_id', '1', 0),
-(561, 0, 'config', 'config_checkout_guest', '1', 0),
-(562, 0, 'config', 'config_checkout_id', '5', 0),
-(560, 0, 'config', 'config_cart_weight', '1', 0),
-(559, 0, 'config', 'config_api_id', '1', 0),
-(557, 0, 'config', 'config_account_mail', '0', 0),
-(558, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(549, 0, 'config', 'config_tax_default', 'shipping', 0),
-(550, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(551, 0, 'config', 'config_customer_online', '0', 0),
-(552, 0, 'config', 'config_customer_group_id', '1', 0),
-(556, 0, 'config', 'config_account_id', '3', 0),
-(555, 0, 'config', 'config_login_attempts', '5', 0),
-(554, 0, 'config', 'config_customer_price', '0', 0),
-(553, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-(548, 0, 'config', 'config_tax', '1', 0),
-(547, 0, 'config', 'config_voucher_max', '1000', 0),
-(546, 0, 'config', 'config_voucher_min', '1', 0),
-(545, 0, 'config', 'config_review_mail', '0', 0),
-(544, 0, 'config', 'config_review_guest', '1', 0),
-(543, 0, 'config', 'config_review_status', '1', 0),
-(542, 0, 'config', 'config_limit_admin', '20', 0),
-(541, 0, 'config', 'config_product_description_length', '100', 0),
-(540, 0, 'config', 'config_product_limit', '15', 0),
-(539, 0, 'config', 'config_product_count', '1', 0),
-(538, 0, 'config', 'config_weight_class_id', '1', 0),
-(537, 0, 'config', 'config_length_class_id', '1', 0),
-(536, 0, 'config', 'config_currency_auto', '1', 0),
-(535, 0, 'config', 'config_currency', 'RUB', 0),
-(534, 0, 'config', 'config_admin_language', 'ru', 0),
-(533, 0, 'config', 'config_language', 'ru', 0),
-(532, 0, 'config', 'config_zone_id', '2761', 0),
-(531, 0, 'config', 'config_country_id', '176', 0),
-(529, 0, 'config', 'config_template', 'default', 0),
-(530, 0, 'config', 'config_layout_id', '4', 0),
-(528, 0, 'config', 'config_meta_keyword', '', 0),
-(527, 0, 'config', 'config_meta_description', 'My Store', 0),
-(526, 0, 'config', 'config_meta_title', 'Your Store', 0),
-(525, 0, 'config', 'config_comment', '', 0),
-(524, 0, 'config', 'config_open', '', 0),
-(523, 0, 'config', 'config_image', '', 0),
-(522, 0, 'config', 'config_fax', '', 0),
-(521, 0, 'config', 'config_telephone', '123456789', 0),
-(520, 0, 'config', 'config_email', 'paramonov.alex.v@gmail.com', 0),
-(519, 0, 'config', 'config_geocode', '', 0),
-(518, 0, 'config', 'config_address', 'Address 1', 0),
-(517, 0, 'config', 'config_owner', 'Your Name', 0),
-(516, 0, 'config', 'config_name', 'Your Store', 0);
+(730, 0, 'config', 'config_shared', '0', 0),
+(731, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(736, 0, 'config', 'config_maintenance', '0', 0),
+(737, 0, 'config', 'config_password', '1', 0),
+(738, 0, 'config', 'config_encryption', '048c9804964b42ae9a3d6394916492d8', 0),
+(732, 0, 'config', 'config_seo_url', '0', 0),
+(733, 0, 'config', 'config_file_max_size', '300000', 0),
+(734, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(729, 0, 'config', 'config_secure', '0', 0),
+(728, 0, 'config', 'config_mail_alert', '', 0),
+(727, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(726, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(725, 0, 'config', 'config_mail_smtp_password', '', 0),
+(724, 0, 'config', 'config_mail_smtp_username', '', 0),
+(721, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(722, 0, 'config', 'config_mail_parameter', '', 0),
+(723, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(720, 0, 'config', 'config_ftp_status', '0', 0),
+(719, 0, 'config', 'config_ftp_root', '', 0),
+(718, 0, 'config', 'config_ftp_password', '', 0),
+(717, 0, 'config', 'config_ftp_username', '', 0),
+(716, 0, 'config', 'config_ftp_port', '21', 0),
+(715, 0, 'config', 'config_ftp_hostname', 'santehych.test', 0),
+(714, 0, 'config', 'config_image_location_height', '50', 0),
+(713, 0, 'config', 'config_image_location_width', '268', 0),
+(711, 0, 'config', 'config_image_cart_width', '47', 0),
+(712, 0, 'config', 'config_image_cart_height', '47', 0),
+(710, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(709, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(708, 0, 'config', 'config_image_compare_height', '90', 0),
+(707, 0, 'config', 'config_image_compare_width', '90', 0),
+(706, 0, 'config', 'config_image_related_height', '80', 0),
+(705, 0, 'config', 'config_image_related_width', '80', 0),
+(704, 0, 'config', 'config_image_additional_height', '74', 0),
+(703, 0, 'config', 'config_image_additional_width', '74', 0),
+(702, 0, 'config', 'config_image_product_height', '228', 0),
+(701, 0, 'config', 'config_image_product_width', '228', 0),
+(700, 0, 'config', 'config_image_popup_height', '500', 0),
+(699, 0, 'config', 'config_image_popup_width', '500', 0),
+(698, 0, 'config', 'config_image_thumb_height', '228', 0),
+(697, 0, 'config', 'config_image_thumb_width', '228', 0),
+(695, 0, 'config', 'config_image_category_width', '80', 0),
+(696, 0, 'config', 'config_image_category_height', '80', 0),
+(694, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(693, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(692, 0, 'config', 'config_return_status_id', '2', 0),
+(691, 0, 'config', 'config_return_id', '0', 0),
+(690, 0, 'config', 'config_affiliate_mail', '0', 0),
+(689, 0, 'config', 'config_affiliate_id', '4', 0),
+(688, 0, 'config', 'config_affiliate_commission', '5', 0),
+(687, 0, 'config', 'config_affiliate_auto', '0', 0),
+(686, 0, 'config', 'config_affiliate_approval', '0', 0),
+(685, 0, 'config', 'config_stock_checkout', '0', 0),
+(684, 0, 'config', 'config_stock_warning', '0', 0),
+(683, 0, 'config', 'config_stock_display', '0', 0),
+(682, 0, 'config', 'config_order_mail', '0', 0),
+(681, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
+(679, 0, 'config', 'config_order_status_id', '1', 0),
+(680, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
+(678, 0, 'config', 'config_checkout_id', '5', 0),
+(677, 0, 'config', 'config_checkout_guest', '1', 0),
+(676, 0, 'config', 'config_cart_weight', '1', 0),
+(675, 0, 'config', 'config_api_id', '1', 0),
+(671, 0, 'config', 'config_login_attempts', '5', 0),
+(672, 0, 'config', 'config_account_id', '3', 0),
+(673, 0, 'config', 'config_account_mail', '0', 0),
+(674, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+(670, 0, 'config', 'config_customer_price', '0', 0),
+(669, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+(668, 0, 'config', 'config_customer_group_id', '1', 0),
+(667, 0, 'config', 'config_customer_online', '0', 0),
+(666, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(665, 0, 'config', 'config_tax_default', 'shipping', 0),
+(663, 0, 'config', 'config_voucher_max', '1000', 0),
+(664, 0, 'config', 'config_tax', '1', 0),
+(662, 0, 'config', 'config_voucher_min', '1', 0),
+(661, 0, 'config', 'config_review_mail', '0', 0),
+(660, 0, 'config', 'config_review_guest', '1', 0),
+(659, 0, 'config', 'config_review_status', '1', 0),
+(658, 0, 'config', 'config_limit_admin', '20', 0),
+(657, 0, 'config', 'config_product_description_length', '100', 0),
+(656, 0, 'config', 'config_product_limit', '15', 0),
+(655, 0, 'config', 'config_product_count', '0', 0),
+(654, 0, 'config', 'config_weight_class_id', '1', 0),
+(653, 0, 'config', 'config_length_class_id', '1', 0),
+(652, 0, 'config', 'config_currency_auto', '1', 0),
+(651, 0, 'config', 'config_currency', 'RUB', 0),
+(650, 0, 'config', 'config_admin_language', 'ru', 0),
+(649, 0, 'config', 'config_language', 'ru', 0),
+(648, 0, 'config', 'config_zone_id', '2761', 0),
+(647, 0, 'config', 'config_country_id', '176', 0),
+(645, 0, 'config', 'config_template', 'default', 0),
+(646, 0, 'config', 'config_layout_id', '4', 0),
+(644, 0, 'config', 'config_meta_keyword', '', 0),
+(643, 0, 'config', 'config_meta_description', 'My Store', 0),
+(642, 0, 'config', 'config_meta_title', 'Your Store', 0),
+(641, 0, 'config', 'config_comment', '', 0),
+(640, 0, 'config', 'config_open', '', 0),
+(639, 0, 'config', 'config_image', '', 0),
+(638, 0, 'config', 'config_fax', '', 0),
+(637, 0, 'config', 'config_telephone', '123456789', 0),
+(636, 0, 'config', 'config_email', 'paramonov.alex.v@gmail.com', 0),
+(635, 0, 'config', 'config_geocode', '', 0),
+(634, 0, 'config', 'config_address', 'Address 1', 0),
+(633, 0, 'config', 'config_owner', 'Your Name', 0),
+(632, 0, 'config', 'config_name', 'Сантехыч', 0);
 
 -- --------------------------------------------------------
 
@@ -3136,6 +3262,7 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 -- Структура таблицы `oc_stock_status`
 --
 
+DROP TABLE IF EXISTS `oc_stock_status`;
 CREATE TABLE IF NOT EXISTS `oc_stock_status` (
 `stock_status_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -3162,6 +3289,7 @@ INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- Структура таблицы `oc_store`
 --
 
+DROP TABLE IF EXISTS `oc_store`;
 CREATE TABLE IF NOT EXISTS `oc_store` (
 `store_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -3175,6 +3303,7 @@ CREATE TABLE IF NOT EXISTS `oc_store` (
 -- Структура таблицы `oc_tax_class`
 --
 
+DROP TABLE IF EXISTS `oc_tax_class`;
 CREATE TABLE IF NOT EXISTS `oc_tax_class` (
 `tax_class_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
@@ -3197,6 +3326,7 @@ INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`
 -- Структура таблицы `oc_tax_rate`
 --
 
+DROP TABLE IF EXISTS `oc_tax_rate`;
 CREATE TABLE IF NOT EXISTS `oc_tax_rate` (
 `tax_rate_id` int(11) NOT NULL,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -3221,6 +3351,7 @@ INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`,
 -- Структура таблицы `oc_tax_rate_to_customer_group`
 --
 
+DROP TABLE IF EXISTS `oc_tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `oc_tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL
@@ -3240,6 +3371,7 @@ INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`)
 -- Структура таблицы `oc_tax_rule`
 --
 
+DROP TABLE IF EXISTS `oc_tax_rule`;
 CREATE TABLE IF NOT EXISTS `oc_tax_rule` (
 `tax_rule_id` int(11) NOT NULL,
   `tax_class_id` int(11) NOT NULL,
@@ -3264,6 +3396,7 @@ INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 -- Структура таблицы `oc_upload`
 --
 
+DROP TABLE IF EXISTS `oc_upload`;
 CREATE TABLE IF NOT EXISTS `oc_upload` (
 `upload_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -3278,11 +3411,12 @@ CREATE TABLE IF NOT EXISTS `oc_upload` (
 -- Структура таблицы `oc_url_alias`
 --
 
+DROP TABLE IF EXISTS `oc_url_alias`;
 CREATE TABLE IF NOT EXISTS `oc_url_alias` (
 `url_alias_id` int(11) NOT NULL,
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=844 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=848 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `oc_url_alias`
@@ -3355,7 +3489,9 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (832, 'manufacturer_id=10', 'sony'),
 (841, 'information_id=6', 'delivery'),
 (842, 'information_id=3', 'privacy'),
-(843, 'information_id=5', 'terms');
+(843, 'information_id=5', 'terms'),
+(845, 'information_id=7', 'actions'),
+(847, 'information_id=9', '');
 
 -- --------------------------------------------------------
 
@@ -3363,6 +3499,7 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 -- Структура таблицы `oc_user`
 --
 
+DROP TABLE IF EXISTS `oc_user`;
 CREATE TABLE IF NOT EXISTS `oc_user` (
 `user_id` int(11) NOT NULL,
   `user_group_id` int(11) NOT NULL,
@@ -3392,6 +3529,7 @@ INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt
 -- Структура таблицы `oc_user_group`
 --
 
+DROP TABLE IF EXISTS `oc_user_group`;
 CREATE TABLE IF NOT EXISTS `oc_user_group` (
 `user_group_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -3412,6 +3550,7 @@ INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
 -- Структура таблицы `oc_voucher`
 --
 
+DROP TABLE IF EXISTS `oc_voucher`;
 CREATE TABLE IF NOT EXISTS `oc_voucher` (
 `voucher_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -3433,6 +3572,7 @@ CREATE TABLE IF NOT EXISTS `oc_voucher` (
 -- Структура таблицы `oc_voucher_history`
 --
 
+DROP TABLE IF EXISTS `oc_voucher_history`;
 CREATE TABLE IF NOT EXISTS `oc_voucher_history` (
 `voucher_history_id` int(11) NOT NULL,
   `voucher_id` int(11) NOT NULL,
@@ -3447,6 +3587,7 @@ CREATE TABLE IF NOT EXISTS `oc_voucher_history` (
 -- Структура таблицы `oc_voucher_theme`
 --
 
+DROP TABLE IF EXISTS `oc_voucher_theme`;
 CREATE TABLE IF NOT EXISTS `oc_voucher_theme` (
 `voucher_theme_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL
@@ -3467,6 +3608,7 @@ INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- Структура таблицы `oc_voucher_theme_description`
 --
 
+DROP TABLE IF EXISTS `oc_voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `oc_voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -3491,6 +3633,7 @@ INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `
 -- Структура таблицы `oc_weight_class`
 --
 
+DROP TABLE IF EXISTS `oc_weight_class`;
 CREATE TABLE IF NOT EXISTS `oc_weight_class` (
 `weight_class_id` int(11) NOT NULL,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000'
@@ -3512,6 +3655,7 @@ INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 -- Структура таблицы `oc_weight_class_description`
 --
 
+DROP TABLE IF EXISTS `oc_weight_class_description`;
 CREATE TABLE IF NOT EXISTS `oc_weight_class_description` (
 `weight_class_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -3539,6 +3683,7 @@ INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `ti
 -- Структура таблицы `oc_zone`
 --
 
+DROP TABLE IF EXISTS `oc_zone`;
 CREATE TABLE IF NOT EXISTS `oc_zone` (
 `zone_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL,
@@ -7666,6 +7811,7 @@ INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- Структура таблицы `oc_zone_to_geo_zone`
 --
 
+DROP TABLE IF EXISTS `oc_zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `oc_zone_to_geo_zone` (
 `zone_to_geo_zone_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL,
@@ -8705,7 +8851,7 @@ MODIFY `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT для таблицы `oc_information`
 --
 ALTER TABLE `oc_information`
-MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `oc_language`
 --
@@ -8720,12 +8866,12 @@ MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 -- AUTO_INCREMENT для таблицы `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=95;
+MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=100;
 --
 -- AUTO_INCREMENT для таблицы `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
-MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=62;
+MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT для таблицы `oc_length_class`
 --
@@ -8895,7 +9041,7 @@ MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT для таблицы `oc_setting`
 --
 ALTER TABLE `oc_setting`
-MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=632;
+MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=748;
 --
 -- AUTO_INCREMENT для таблицы `oc_stock_status`
 --
@@ -8930,7 +9076,7 @@ MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT для таблицы `oc_url_alias`
 --
 ALTER TABLE `oc_url_alias`
-MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=844;
+MODIFY `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=848;
 --
 -- AUTO_INCREMENT для таблицы `oc_user`
 --

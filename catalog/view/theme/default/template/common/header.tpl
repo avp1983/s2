@@ -42,8 +42,8 @@
 
 <nav id="top">
   <div class="container">
-    <?php echo $currency; ?>
-    <?php echo $language; ?>
+   <!-- <?php echo $currency; ?>
+    <?php echo $language; ?>-->
     <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
         <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
@@ -81,9 +81,9 @@
         </div>
       </div>
       <div class="col-sm-5"><?php echo $inscription; ?>
-	  <?php echo $content_head; ?>
+	 
       </div>
-      <div class="col-sm-3"><?php echo $cart; ?></div>
+      <div class="col-sm-3"><?php echo $cart; ?> <?php echo $content_head; ?></div>
     </div>
   </div>
 </header>
